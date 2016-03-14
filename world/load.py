@@ -2,7 +2,7 @@ import os
 from django.contrib.gis.utils import LayerMapping
 from .models import WorldBorder
 
-world_mapping = {
+worldborder_mapping = {
     'fips': 'FIPS',
     'iso2': 'ISO2',
     'iso3': 'ISO3',
@@ -14,7 +14,7 @@ world_mapping = {
     'subregion': 'SUBREGION',
     'lon': 'LON',
     'lat': 'LAT',
-    'mpoly': 'MULTIPOLYGON',
+    'geom': 'MULTIPOLYGON',
 }
 
 world_shp = os.path.abspath(os.path.join(
@@ -22,7 +22,7 @@ world_shp = os.path.abspath(os.path.join(
 
 
 def run(verbose=True):
-    lm = LayerMapping(WorldBorder, world_shp, world_mapping,
+    lm = LayerMapping(WorldBorder, world_shp, worldborder_mapping,
                       transform=False, encoding='iso-8859-1')
 
     lm.save(strict=True, verbose=verbose)
