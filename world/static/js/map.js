@@ -20,8 +20,7 @@ require([
         var center = new google.maps.LatLng(response.lat, response.lon);
         map.setCenter(center);  
         map.setZoom(8); 
-        var geojson = response.geom;
-        console.log(geojson);
+        var geojson = response.geojson;
         map.data.addGeoJson(JSON.parse(geojson));
       });
       
