@@ -1,0 +1,3 @@
+# A practice GeodJango project
+
+
